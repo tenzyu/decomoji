@@ -1,18 +1,12 @@
 <!-- @format -->
 
-# 現在開発中です。
-
-# 致命的な問題
-
-- なぜかデコ文字として表示されるサーバーとそうでないサーバーが存在し、安定していません。
-
-> ↓ **draft** ↓
-
 # デコ文字！
 
-**Decomoji** は SNS アプリ **Discord** で **簡単** に **デコ文字** を使えるようにする Discord bot です。
+<p align="center">_ディスコードライフにイロドリを！_</p>
 
-_みなさんのディスコードライフにラブリーな彩りを！_
+**Decomoji** は SNS アプリ **Discord** で **簡単** に可愛い **デコ文字** を使えるようにする Discord bot です。
+
+**[Tips]** うまく動かない場合は下のトラブルシューティングを参考にしてください！
 
 > ## **[✉️ Click To Invite !](https://discord.com/api/oauth2/authorize?client_id=792956411248246796&permissions=537226240&scope=bot)**
 
@@ -44,12 +38,30 @@ _みなさんのディスコードライフにラブリーな彩りを！_
 
 開始日は **2020 年 12 月 28 日** です。
 
-GCE で動かしています。(Python3.7.0)
-
-問題があれば **Issue** を立てるか、**[Twitter](https://twitter.com/tenzyumasuda)** にメッセージを送ってください。
+**GCE** で動かしています。 **(Python3.7.0)**
 
 > ## **[✉️ Click To Invite!](https://discord.com/api/oauth2/authorize?client_id=792956411248246796&permissions=537226240&scope=bot)**
 
-<p align="center">
-    <small>©️ 2020 Tenzyu Masuda</small>
-</p>
+# トラブルシューティング
+
+## 問題 1：変なのが返ってくる。
+
+`!e てすと` と送信して、デコ文字ではなく `:81_te::87_su::80_to:` のような絵文字のエイリアスが返ってきた場合は、
+
+_**サーバーの設定から、@everyone に対して Use External Emoji の権限を与えてください。**_
+
+Decomoji は **Webhook** という仕組みを利用して、デコ文字に置き換えたメッセージを送信しています。このときに参照される権限先が @Decomoji **ではなく** @everyone であるため、このように解決する必要があります。
+
+<hr />
+
+**解決しない or 新しい問題** があれば **Issue** を立てるか、**[Twitter](https://twitter.com/tenzyumasuda)** にダイレクトメッセージを送ってください。気軽にどうぞ！
+
+<br />
+
+<br />
+
+<p align="center">©️ 2020 Tenzyu Masuda</p>
+
+<br />
+
+<br />
