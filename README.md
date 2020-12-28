@@ -2,7 +2,7 @@
 
 # デコ文字！
 
-<p align="center">_ディスコードライフにイロドリを！_</p>
+<p align="center"><i>ディスコードライフにイロドリを！</i></p>
 
 **Decomoji** は SNS アプリ **Discord** で **簡単** に可愛い **デコ文字** を使えるようにする Discord bot です。
 
