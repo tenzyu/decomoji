@@ -8,7 +8,8 @@ class Decomoji(commands.Cog):
         self.bot = bot
 
     def get_replaced_char(self, char: str):
-        if emoji_id := constant.EMOJI_IDS.get(char):
+        emoji_id = constant.EMOJI_IDS.get(char)
+        if emoji_id:
             emoji = self.bot.get_emoji(int(emoji_id))
             return str(emoji)
         elif " " == char:

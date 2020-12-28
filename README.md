@@ -44,6 +44,8 @@ _みなさんのディスコードライフにラブリーな彩りを！_
 
 開始日は **2020 年 12 月 28 日** です。
 
+GCE で動かしています。(Python3.7.0)
+
 問題があれば **Issue** を立てるか、**[Twitter](https://twitter.com/tenzyumasuda)** にメッセージを送ってください。
 
 > ## **[✉️ Click To Invite!](https://discord.com/api/oauth2/authorize?client_id=792956411248246796&permissions=537226240&scope=bot)**
