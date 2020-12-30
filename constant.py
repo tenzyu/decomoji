@@ -1,11 +1,11 @@
-import os
+from os import getenv
 
 import dotenv
 
 dotenv.load_dotenv()
 
 # token
-DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+DISCORD_BOT_TOKEN = getenv("DISCORD_BOT_TOKEN")
 
 # name
 WEBHOOK_NAME = "Decomoji"

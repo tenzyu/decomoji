@@ -25,7 +25,9 @@ class Decomoji(commands.Cog):
         return await channel.create_webhook(name=constant.WEBHOOK_NAME)
 
     @commands.command(aliases=["emoji", "d", "e"])
-    async def decomoji(self, ctx, *, replace_string: commands.clean_content(use_nicknames=False)):
+    async def decomoji(
+        self, ctx, *, replace_string: commands.clean_content(use_nicknames=False)
+    ):
         """!decomoji <Message> でテキストをサポート済みの絵文字に置き換えます。"""
         webhook = await self.get_webhook(ctx.channel)
         replaced_string = []
