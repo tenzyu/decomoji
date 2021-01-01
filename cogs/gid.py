@@ -16,7 +16,7 @@ class GetIds(commands.Cog, command_attrs=dict(hidden=True)):
         response = pattern.finditer(ctx.message.content)
         result = ""
         for match in response:
-            result += f'''"{match.group(1)}": "{match.group(2)}",\n'''
+            result += f""""{match.group(1)}": "{match.group(2)}",\n"""
         await ctx.send(result)
 
 
