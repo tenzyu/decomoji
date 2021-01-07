@@ -24,12 +24,12 @@ class MyBot(commands.Bot):
         print("logged in as:", self.user.name, self.user.id)
 
     async def on_command_error(self, ctx, error):
-        ignore_error = (
+        ignore_errors = (
             commands.CommandNotFound,
             commands.BadArgument,
             commands.CheckFailure,
         )
-        if isinstance(error, ignore_error):
+        if isinstance(error, ignore_errors):
             return
         await ctx.send(error)
 
