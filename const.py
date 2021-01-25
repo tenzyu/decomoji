@@ -1,16 +1,16 @@
 from os import getenv
 
-import dotenv
+from dotenv import load_dotenv
 
-dotenv.load_dotenv()
+load_dotenv()
 
-# token
+# get token from .env
 DISCORD_BOT_TOKEN = getenv("DISCORD_BOT_TOKEN")
 
-# name
+# setting
+BOT_NAME = "Decomoji"
+BOT_PREFIX = "!"
 WEBHOOK_NAME = "Decomoji"
-
-# emoji
 EMOJI_IDS = {
     "あ": "792941871466807319",
     "い": "792941871218950174",
@@ -174,8 +174,8 @@ EMOJI_IDS = {
     "”": "793687852839731220",
     "‘": "793687851795349533",
     "’": "793687852114116618",
-    "$": "793687853556957184",
-    "＄": "793687853556957184",
+    "$": "793687853556957184",
+    "＄": "793687853556957184",
     "€": "793687852541411359",
     "・": "793687850871816192",
     "~": "793687850762633216",

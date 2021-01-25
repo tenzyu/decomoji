@@ -1,33 +1,37 @@
-import glob
 from pathlib import Path
 from traceback import print_exc
 
-from discord.ext import commands
+from discord.ext.commands import (
+    BadArgument,
+    Bot,
+    CheckFailure,
+    CommandNotFound,
+    when_mentioned_or,
+)
 
-import constant
+import const
 
 
-class MyBot(commands.Bot):
-    def __init__(self, **options):
-        super().__init__(command_prefix=commands.when_mentioned_or("!"), **options)
-        print("Starting Decomoji...")
-        self.remove_command("help")
+class MyBot(Bot):
+    def __init__(self):
+        super().__init__(command_prefix=when_mentioned_or(const.BOT_PREFIX))
+        print(f"{const.BOT_NAME} を起動します。")
 
         for cog in Path("cogs/").glob("*.py"):
             try:
                 self.load_extension("cogs." + cog.stem)
-                print(f"Loaded {cog.stem}.py")
-            except:
+                print(f"{cog.stem}.pyは正常にロードされました。")
+            except Exception:
                 print_exc()
 
     async def on_ready(self):
-        print("logged in as:", self.user.name, self.user.id)
+        print(f"{self.user} としてログインしました。")
 
     async def on_command_error(self, ctx, error):
         ignore_errors = (
-            commands.CommandNotFound,
-            commands.BadArgument,
-            commands.CheckFailure,
+            BadArgument,
+            CheckFailure,
+            CommandNotFound,
         )
         if isinstance(error, ignore_errors):
             return
@@ -36,4 +40,4 @@ class MyBot(commands.Bot):
 
 if __name__ == "__main__":
     bot = MyBot()
-    bot.run(constant.DISCORD_BOT_TOKEN)
+    bot.run(const.DISCORD_BOT_TOKEN)
