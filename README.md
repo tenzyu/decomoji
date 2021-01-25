@@ -1,5 +1,3 @@
-<!-- @format -->
-
 # デコ文字！
 
 <p align="center"><i>ディスコードライフにイロドリを！</i></p>
@@ -10,7 +8,7 @@
 
 > ## **[✉️ Click To Invite !](https://discord.com/api/oauth2/authorize?client_id=792956411248246796&permissions=537226240&scope=bot)**
 
-## 使い方！
+## 使い方
 
 ### `!decomoji <Message>`
 
@@ -18,7 +16,7 @@
 
 また、 **`!d` や `!e` に省略可能です。**
 
-## こんな感じ！
+## こんな感じ
 
 ![demo](https://cdn.discordapp.com/attachments/752286472383758416/793070793893347328/demo.gif)
 
@@ -60,7 +58,7 @@ Decomoji は **Webhook** という仕組みを利用して、デコ文字に置�
 
 <br />
 
-<p align="center">©️ 2020 Tenzyu Masuda</p>
+<p align="center">©️ 2020 - 2021 Tenzyu Masuda</p>
 
 <br />
 
