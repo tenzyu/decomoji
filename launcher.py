@@ -16,6 +16,7 @@ class MyBot(Bot):
     def __init__(self):
         super().__init__(command_prefix=when_mentioned_or(const.BOT_PREFIX))
         print(f"{const.BOT_NAME} を起動します。")
+        self.remove_command("help")
 
         for cog in Path("cogs/").glob("*.py"):
             try:
