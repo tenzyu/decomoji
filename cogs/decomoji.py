@@ -28,7 +28,6 @@ class Decomoji(commands.Cog):
     async def decomoji(
         self, ctx, *, replace_string: commands.clean_content(use_nicknames=False)
     ):
-        """!decomoji <Message> でテキストをサポート済みの絵文字に置き換えます。"""
         webhook = await self.get_webhook(ctx.channel)
         replaced_string = []
         for replace_char in replace_string:

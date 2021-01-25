@@ -1,6 +1,7 @@
 from pathlib import Path
 from traceback import print_exc
 
+from discord import Game
 from discord.ext.commands import (
     BadArgument,
     Bot,
@@ -16,6 +17,7 @@ class MyBot(Bot):
     def __init__(self):
         super().__init__(command_prefix=when_mentioned_or(const.BOT_PREFIX))
         print(f"{const.BOT_NAME} を起動します。")
+        self.remove_command("help")
 
         for cog in Path("cogs/").glob("*.py"):
             try:
@@ -26,6 +28,8 @@ class MyBot(Bot):
 
     async def on_ready(self):
         print(f"{self.user} としてログインしました。")
+        activity = Game(name="!help または @Decomoji help")
+        await self.change_presence(activity=activity)
 
     async def on_command_error(self, ctx, error):
         ignore_errors = (
