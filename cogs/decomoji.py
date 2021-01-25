@@ -1,4 +1,4 @@
-import constant
+import const
 import discord
 from discord.ext import commands
 
@@ -8,7 +8,7 @@ class Decomoji(commands.Cog):
         self.bot = bot
 
     def get_replaced_char(self, char: str):
-        emoji_id = constant.EMOJI_IDS.get(char)
+        emoji_id = const.EMOJI_IDS.get(char)
         if emoji_id:
             emoji = self.bot.get_emoji(int(emoji_id))
             return str(emoji)
@@ -19,10 +19,10 @@ class Decomoji(commands.Cog):
 
     async def get_webhook(self, channel):
         webhooks = await channel.webhooks()
-        webhook = discord.utils.get(webhooks, name=constant.WEBHOOK_NAME)
+        webhook = discord.utils.get(webhooks, name=const.WEBHOOK_NAME)
         if webhook:
             return webhook
-        return await channel.create_webhook(name=constant.WEBHOOK_NAME)
+        return await channel.create_webhook(name=const.WEBHOOK_NAME)
 
     @commands.command(aliases=["emoji", "d", "e"])
     async def decomoji(
